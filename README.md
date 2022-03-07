@@ -4,7 +4,7 @@
 
 Sample app to demonstrate offline feature using Flutter, Repository pattern, hooks, providers, cubit, build-flavors, tests, BLoC in multi module project.
 
-The app fetches popular top 250 IMDB movies of all time with search functionality using HTTP client and stores it in local Database. All bussiness logic i.e how to serve and from where to serve data are written in repository. Internally.
+The app fetches popular top 250 IMDB movies of all time with search functionality using HTTP client and stores it in local Database. All bussiness logic i.e how to serve and from where to serve data are written in repository.
 
 **Note** to run the project use own keys ie keys.dart
 
