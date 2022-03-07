@@ -29,6 +29,9 @@ dependencies:
   cupertino_icons: ^1.0.2
   http: ^0.13.4
   equatable: ^2.0.3
+  sqflite: ^2.0.2
+  path_provider: ^2.0.9
+  path: ^1.8.0
 
   core:
     path: ../core

@@ -43,7 +43,7 @@ class DashboardPage extends HookWidget {
     } else {
       /// the code inside useEffect does not work unless the provided data changes, ie -> searchText.value
       useEffect(() {
-        moviesCubit.getTop250Movies();
+        moviesCubit.getTop250Movies(false);
       }, [searchText.value]);
     }
 
@@ -84,7 +84,7 @@ class DashboardPage extends HookWidget {
           if (state is LoadingState) {
             return Loading(loadingMessage: state.loadingMessage);
           } else if (state is ErrorState) {
-            return Error(error: state.errorMessage, onRetryPressed: () => moviesCubit.getTop250Movies());
+            return Error(error: state.errorMessage, onRetryPressed: () => moviesCubit.getTop250Movies(true));
           } else if (state is LoadedState) {
             return MoviesListWidget(moviesList: state.data as List<Movie>);
           } else {

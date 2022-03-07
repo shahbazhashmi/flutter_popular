@@ -9,10 +9,10 @@ class MoviesCubit extends Cubit<DataState> {
 
   final MoviesRepository repository;
 
-  void getTop250Movies() async {
+  void getTop250Movies(bool mustFetch) async {
     try {
       emit(LoadingState("Loading..."));
-      final movieSearchResponse = await repository.getTop250Movies();
+      final movieSearchResponse = await repository.getTop250Movies(mustFetch: mustFetch);
       if (movieSearchResponse.items == null || movieSearchResponse.items!.isEmpty) {
         throw DataNotFoundException("data not found");
       }

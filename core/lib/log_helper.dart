@@ -20,8 +20,8 @@ class LogHelper {
     if (_isLogEnabled) _logger.d(string);
   }
 
-  static logInfo(String string) {
-    if (_isLogEnabled) _logger.i(string);
+  static logInfo(String tag, String message) {
+    if (_isLogEnabled) _logger.i("$tag -->> $message");
   }
 
   static logException(dynamic e, StackTrace s) {

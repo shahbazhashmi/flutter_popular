@@ -44,6 +44,7 @@ dependencies:
   mocktail: ^0.2.0
   bloc_test: ^9.0.1
   cached_network_image: ^3.2.0
+  sqflite: ^2.0.2
 
 
   core:

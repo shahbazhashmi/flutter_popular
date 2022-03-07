@@ -124,4 +124,6 @@ class CoreUtils {
   static void openKeyboard(BuildContext context, FocusNode inputNode) {
     FocusScope.of(context).requestFocus(inputNode);
   }
+
+  static int getCurrentTimeStamp() => DateTime.now().millisecondsSinceEpoch;
 }
