@@ -1,16 +1,11 @@
 # flutter_popular
 
-A new Flutter project.
+#### This Repository can be also used as a [Template](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template)!!!
 
-## Getting Started
+Sample app to demonstrate offline feature using Flutter, Repository pattern, hooks, providers, cubit, build-flavors, tests, BLoC in multi module project.
 
-This project is a starting point for a Flutter application.
+The app fetches popular top 250 IMDB movies of all time with search functionality using HTTP client and stores it in local Database. All bussiness logic i.e how to serve and from where to serve data are written in repository. Internally.
 
-A few resources to get you started if this is your first Flutter project:
+**Note** to run the project use own keys ie keys.dart
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<img src="demo.gif?raw=true" width="350">
