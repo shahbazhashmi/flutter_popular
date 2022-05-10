@@ -38,14 +38,15 @@ class DashboardPage extends HookWidget {
       CoreUtils.closeKeyboardForcefully();
     }
 
-    if (searchText.value.isNotEmpty) {
-      moviesCubit.searchMovies(searchText.value);
-    } else {
-      /// the code inside useEffect does not work unless the provided data changes, ie -> searchText.value
-      useEffect(() {
+    /// the code inside useEffect does not work unless the provided data changes, ie -> searchText.value
+    useEffect(() {
+      if (searchText.value.isEmpty) {
         moviesCubit.getTop250Movies(false);
-      }, [searchText.value]);
-    }
+      } else {
+        moviesCubit.searchMovies(searchText.value);
+      }
+      return null;
+    }, [searchText.value]);
 
     return Scaffold(
       resizeToAvoidBottomInset: false,
