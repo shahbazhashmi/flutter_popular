@@ -38,6 +38,21 @@ abstract class BaseRepository {
     }
 
     LogHelper.logInfo(_tag, "$controllerName : publishing server data");
+    final apiResponse = await _fetchApiData(apiCallType,
+        "${DataSourceConfig.baseUrl}$controllerName", requestModel);
+    saveDataLocally(requestModel, apiResponse);
+    return apiResponse;
+  }
+
+  Future<dynamic> fetchLiveData(ApiCallType apiCallType,
+      String controllerName, requestModel) async {
+    final isInternetConnected = await CoreUtils.isInternetConnected();
+
+    if (!isInternetConnected) {
+      throw Exception('internet is not available');
+    }
+
+    LogHelper.logInfo(_tag, "$controllerName : publishing server data");
     return await _fetchApiData(apiCallType,
         "${DataSourceConfig.baseUrl}$controllerName", requestModel);
   }
@@ -48,7 +63,6 @@ abstract class BaseRepository {
         ? await _api.get(url)
         : await _api.post(url, requestModel);
     handleApiError(apiResponse);
-    saveDataLocally(requestModel, apiResponse);
     return apiResponse;
   }
 }
