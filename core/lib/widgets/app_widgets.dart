@@ -82,14 +82,16 @@ class Error extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(height: 6),
-          ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              primary: Colors.grey,
-            ),
-            child: Text(retryText ?? "Retry", style: const TextStyle(color: Colors.black)),
-            onPressed: () => onRetryPressed?.call(),
-          )
+          if(onRetryPressed != null)...[
+            const SizedBox(height: 6),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                primary: Colors.grey,
+              ),
+              child: Text(retryText ?? "Retry", style: const TextStyle(color: Colors.black)),
+              onPressed: () => onRetryPressed?.call(),
+            )
+          ]
         ],
       ),
     );

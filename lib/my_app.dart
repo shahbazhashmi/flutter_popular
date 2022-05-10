@@ -6,6 +6,7 @@ import 'package:flutter_popular/config/routes.dart';
 import 'package:flutter_popular/config/theme.dart';
 import 'package:flutter_popular/pages/dashboard_page.dart';
 import 'package:flutter_popular/repositories/movies_repository.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'cubits/movies_cubit.dart';
 
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return ProviderScope(child: MaterialApp(
       title: 'Flutter Demo',
       theme: AppTheme.of(context),
       routes: <String, WidgetBuilder>{
@@ -38,6 +39,6 @@ class MyApp extends StatelessWidget {
         AppRoutes.splash: (context) => getDashboardPage(),
         AppRoutes.dashboard: (context) => getDashboardPage()
       },
-    );
+    ));
   }
 }
