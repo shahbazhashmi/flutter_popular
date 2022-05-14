@@ -35,7 +35,7 @@ void main() {
   });
 
   test('test getTop250Movies() => Emits movies when repository answer correctly', () async {
-    moviesCubit.getTop250Movies();
+    moviesCubit.getTop250Movies(false);
     await expectLater(
       moviesCubit.stream,
       emits(LoadedState('mock response', top250MoviesResponse.items)),
