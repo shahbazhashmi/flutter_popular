@@ -25,7 +25,7 @@ class MoviesRepository extends BaseRepository {
     return Top250MoviesResponse.fromJson(apiResponse);
   }
 
-  Future<MovieSearchResponse> searchMovies(String searchParam) async {
+  Future<MovieSearchResponse> searchMovies(String? searchParam) async {
     // not implementing offline feature for search
     final apiResponse = await fetchLiveData(ApiCallType.get,
         "SearchMovie/${Keys.imdbApiKey}/$searchParam", null);
